@@ -81,6 +81,10 @@ body {
   row-gap: 9.6rem;
 }
 
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+
 .grid--2--cols {
   grid-template-columns: repeat(2, 1fr);
 }
@@ -91,6 +95,10 @@ body {
 
 .grid--4--cols {
   grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5--cols {
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .grid-center-v {
@@ -134,14 +142,17 @@ body {
   letter-spacing: 0.75px;
 }
 
-
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
   text-decoration: none;
   font-size: 2rem;
   font-weight: 600;
+  color: inherit;
   padding: 1.6rem 3.2rem;
+  border: none;
+  cursor: pointer;
   border-radius: 9px;
   transition: all 0.3s;
 }
@@ -186,6 +197,11 @@ body {
 }
 
 /* HELPER CLASSES */
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
+}
 
 .margin-right-sm {
   margin-right: 1.6rem !important;
