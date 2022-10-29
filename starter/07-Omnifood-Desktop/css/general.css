@@ -53,7 +53,7 @@
 html {
   /*  this percentage came from the default font size of the browser which is 16px
       we want to change it to 10px with the user ability to increase and decrease the font size whenever he wants
-      10 / 16 = 0.625 wich is 62.5% of the default font size
+      10 / 16 = 0.625 which is 62.5% of the default font size
   */
   font-size: 62.5%;
 }
@@ -207,7 +207,7 @@ body {
   margin-right: 1.6rem !important;
 }
 
-.margin-buttom-md {
+.margin-bottom-md {
   margin-bottom: 4.8rem !important;
 }
 
