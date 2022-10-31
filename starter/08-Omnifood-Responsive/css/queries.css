@@ -7,6 +7,7 @@
 @media (max-width: 84em) {
   .hero {
     max-width: 120rem;
+    gap: 6.4rem;
   }
 
   .primary-heading {
@@ -16,6 +17,120 @@
   .gallery {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* ********************************** */
+/* BELLOW 1200px (Landscape Tablets) */
+/* ********************************** */
+
+@media (max-width: 75em) {
+
+  html {
+    font-size: 56.25%;
+  }
+
+  .grid {
+    display: grid;
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+
+  .navigation-list {
+    gap: 3.2rem;
+  }
+
+  .header {
+    padding: 0 3.2rem;
+  }
+
+  .hero {
+    gap: 4.8rem;
+  }
+
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+
+  .heading-tertiary {
+    font-size: 2.4rem;
+  }
+
+  .testimonials-container {
+    padding: 9.6rem 4.8rem
+  }
+}
+
+/* ********************************** */
+/* BELLOW 944px (Tablets) */
+/* ********************************** */
+
+@media(max-width: 59em) {
+
+  html {
+    font-size: 50%;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+
+  .hero-text-box,
+  .hero-img-box {
+    text-align: center;
+  }
+
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+
+  .hero-img {
+    width: 60%;
+  }
+
+  .featured-img {
+    height: 2.4rem;
+  }
+
+  .step-number {
+    font-size: 7.4rem
+  }
+
+  .meal-content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem
+  }
+
+  .meal-attributes {
+    gap: 2.4rem
+  }
+
+
+  .section-testimonials {
+    grid-template-columns: 1fr
+  }
+
+  .testimonials-container {
+    padding: 6.4rem 3.2rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .cta-form {
+    grid-template-columns: 1fr
+  }
+
+  .btn--form {
+    margin-top: 2.4rem;
+  }
+
 }
 
 /* 
