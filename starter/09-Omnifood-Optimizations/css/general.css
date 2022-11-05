@@ -5,51 +5,38 @@
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
 - Font weights
-Default: 400
-Medium: 500
-Semi-bold: 600
-Bold: 700
+  Default: 400
+  Medium: 500
+  Semi-bold: 600
+  Bold: 700
 
 - Line heights
-Default: 1
-Small: 1.05
-Medium: 1.2
-Paragraph default: 1.6
-Large: 1.8
+  Default: 1
+  small: 1.05
+  paragraph: 1.6
 
 - Letter spacing
--0.5px
-0.75px
+	letter-spacing: -0.5px;
+	letter-spacing: 0.75px;
+	letter-spacing: 1.2px;
 
 --- 02 COLORS
 
 - Primary: #e67e22
-- Tints:
-#fdf2e9
-#fae5d3
-#eb984e
-
-- Shades: 
-#cf711f
-#45260a
-
+- Tints: 
+  #fdf2e9
+  #fae5d3
+- Shades: #cf711f
 - Accents:
 - Greys
-
-#888
-#767676 (lightest grey allowed on #fff)
-#6f6f6f (lightest grey allowed on #fdf2e9)
 #555
 #333
 
 --- 05 SHADOWS
 
-0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
 
 --- 06 BORDER-RADIUS
-
-Default: 9px
-Medium: 11px
+  Default: 9px
 
 --- 07 WHITESPACE
 
@@ -64,10 +51,10 @@ Medium: 11px
 }
 
 html {
-  /* font-size: 10px; */
-
-  /* 10px / 16px = 0.625 = 62.5% */
-  /* Percentage of user's browser font-size setting */
+  /*  this percentage came from the default font size of the browser which is 16px
+      we want to change it to 10px with the user ability to increase and decrease the font size whenever he wants
+      10 / 16 = 0.625 which is 62.5% of the default font size
+  */
   font-size: 62.5%;
   overflow-x: hidden;
 }
@@ -77,65 +64,54 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #555;
-
-  /* Only works if there is nothing absolutely positioned in relation to body */
   overflow-x: hidden;
 }
 
-/**************************/
-/* GENRAL REUSABLE COMPONENTS */
-/**************************/
+/* ********************************** */
+/* GENERAL REUSABLE COMPONENT */
+/* ********************************** */
 
 .container {
-  /* 1140px */
   max-width: 120rem;
-  padding: 0 3.2rem;
   margin: 0 auto;
+  padding: 0 3.2rem;
 }
 
 .grid {
   display: grid;
   column-gap: 6.4rem;
   row-gap: 9.6rem;
-
-  /* margin-bottom: 9.6rem; */
 }
-
-/* .grid:last-child {
-  margin-bottom: 0;
-} */
 
 .grid:not(:last-child) {
   margin-bottom: 9.6rem;
 }
 
-.grid--2-cols {
+.grid--2--cols {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.grid--3-cols {
+.grid--3--cols {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.grid--4-cols {
+.grid--4--cols {
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* .grid--5-cols {
+/* .grid--5--cols {
   grid-template-columns: repeat(5, 1fr);
 } */
 
-.grid--center-v {
+.grid-center-v {
   align-items: center;
 }
 
 .heading-primary,
 .heading-secondary,
 .heading-tertiary {
-  font-weight: 700;
   color: #333;
-  /* color: #45260a; */
-  /* color: #343a40; */
+  font-weight: 700;
   letter-spacing: -0.5px;
 }
 
@@ -160,6 +136,7 @@ body {
 .subheading {
   display: block;
   font-size: 1.6rem;
+  letter-spacing: 0.75px;
   font-weight: 500;
   color: #cf711f;
   text-transform: uppercase;
@@ -171,20 +148,14 @@ body {
 .btn:link,
 .btn:visited {
   display: inline-block;
-
   text-decoration: none;
   font-size: 2rem;
   font-weight: 600;
+  color: inherit;
   padding: 1.6rem 3.2rem;
-  border-radius: 9px;
-
-  /* Only necessary for .btn */
   border: none;
   cursor: pointer;
-  font-family: inherit;
-
-  /* Put transition on original "state" */
-  /* transition: background-color 0.3s; */
+  border-radius: 9px;
   transition: all 0.3s;
 }
 
@@ -194,47 +165,31 @@ body {
   color: #fff;
 }
 
-.btn--full:hover,
-.btn--full:active {
-  background-color: #cf711f;
-}
-
 .btn--outline:link,
 .btn--outline:visited {
   background-color: #fff;
   color: #555;
 }
 
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+}
+
 .btn--outline:hover,
 .btn--outline:active {
   background-color: #fdf2e9;
-
-  /* border: 3px solid #fff; */
-
-  /* Trick to add border inside */
   box-shadow: inset 0 0 0 3px #fff;
-}
-
-.btn--form {
-  background-color: #45260a;
-  color: #fdf2e9;
-  align-self: end;
-  padding: 1.2rem;
-}
-
-.btn--form:hover {
-  background-color: #fff;
-  color: #555;
 }
 
 .link:link,
 .link:visited {
   display: inline-block;
-  color: #e67e22;
   text-decoration: none;
-  border-bottom: 1px solid currentColor;
+  color: #e67e22;
   padding-bottom: 2px;
-  transition: all 0.3s;
+  border-bottom: 1px solid currentColor;
+  transition: all 0.3s
 }
 
 .link:hover,
@@ -243,35 +198,13 @@ body {
   border-bottom: 1px solid transparent;
 }
 
-.list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-
-.list-item {
-  font-size: 1.8rem;
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-  line-height: 1.2;
-}
-
-.list-icon {
-  width: 3rem;
-  height: 3rem;
-  color: #e67e22;
-}
+/* HELPER CLASSES */
 
 *:focus {
   outline: none;
-  /* outline: 4px dotted #e67e22; */
-  /* outline-offset: 8px; */
   box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
 }
 
-/* HELPER/SETTINGS CLASSES */
 .margin-right-sm {
   margin-right: 1.6rem !important;
 }
