@@ -15,6 +15,62 @@ const yearEl = document.querySelector(".year");
 yearEl.textContent = currentYear;
 
 ///////////////////////////////////////////////////////////
+// Implement Smooth Scrolling for all browsers using js
+
+const allLinks = document.querySelectorAll("a");
+allLinks.forEach(function (link) {
+	link.addEventListener("click", function (e) {
+		// stop the default behavior of all links
+		e.preventDefault();
+
+		// add smooth scroll to logo
+		const href = link.getAttribute("href");
+		if (href === "#") {
+			window.scrollTo({
+				top: 0,
+				behavior: "smooth",
+			});
+		}
+
+		// add scroll behavior to all other links in the page
+		if (href !== "#" && href.startsWith("#")) {
+			const sectionEl = document.querySelector(href);
+			sectionEl.scrollIntoView({ behavior: "smooth" });
+		}
+
+		// close the mobile navigation after scrolling
+		if (link.classList.contains("nav-link"))
+			headerEl.classList.toggle("nav-open");
+	});
+});
+
+///////////////////////////////////////////////////////////
+// Implementing STICKY HEADER
+
+const sectionHeroEl = document.querySelector(".section-hero");
+
+const obs = new IntersectionObserver(
+	function (entries) {
+		const ent = entries[0];
+		if (!ent.isIntersecting) {
+			document.body.classList.add("sticky");
+		}
+
+		if (ent.isIntersecting) {
+			document.body.classList.remove("sticky");
+		}
+	},
+	// in the viewport
+	{
+		root: null,
+		threshold: 0,
+		rootMargin: "-70px",
+	}
+);
+
+obs.observe(sectionHeroEl);
+
+///////////////////////////////////////////////////////////
 /* Fixing flexbox gap property missing in some Safari versions */
 
 function checkFlexGap() {
