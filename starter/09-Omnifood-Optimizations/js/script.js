@@ -54,6 +54,7 @@ const obs = new IntersectionObserver(
 		const ent = entries[0];
 		if (!ent.isIntersecting) {
 			document.body.classList.add("sticky");
+			headerEl.classList.remove("nav-open");
 		}
 
 		if (ent.isIntersecting) {
