@@ -168,6 +168,7 @@
 .logos {
   display: flex;
   justify-content: space-around;
+  color: d;
 }
 
 .featured-img {
